@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS users(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    email VARCHAR(50) UNIQUE NOT NULL,
+    created_at TIMESTAMP DEFAULT NOW()
+);
+CREATE TABLE IF NOT EXITS course(
+    course_id SERIAL  PRIMARY KEY ,
+    name VARCHAR(50) NOT NULL,
+    price INT NOT NULL,
+    duration INT NOT NULL,
+    user_id INT REFRENCES users(id) ON DELETE CASCADE
+)
